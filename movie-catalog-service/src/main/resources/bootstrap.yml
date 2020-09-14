@@ -5,10 +5,14 @@ spring:
     active: default
   cloud:
     config:
-      uri: http://localhost:8888
+      uri: ${CONFIGSERVER:http://localhost:8888}
       username: ${CONFIGSERVER_USERNAME:teste}
-      password: ${CONFIGSERVER_PASSWORD:12342}
-
+      password: ${CONFIGSERVER_PASSWORD:12342}   
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${DISCOVERY_SERVER:http://localhost:8761/eureka/}
+       
 management:
   security:
     enabled: false
