@@ -3,3 +3,12 @@ spring:
     name: movie-catalog-service
   profiles:
     active: default
+  cloud:
+    config:
+      uri: http://localhost:8888
+      username: ${CONFIGSERVER_USERNAME:teste}
+      password: ${CONFIGSERVER_PASSWORD:12342}
+
+management:
+  security:
+    enabled: false
